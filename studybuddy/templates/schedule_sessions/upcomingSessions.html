@@ -1,0 +1,477 @@
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Team B-15">
+        <meta name="description" content="Study Buddy">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <title>My Upcoming Sessions</title>
+        <link href='https://fonts.googleapis.com/css?family=Orelega One' rel='stylesheet'>
+        <style>
+            .navbar {
+                text-align: right;
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+    
+            .navbar-brand {
+                margin-left: 16px;
+                font-size: 26px;
+                color: #464646;
+            }
+    
+            .navbar-toggler {
+                color: #464646;
+            }
+    
+            .nav-link {
+                text-align: right;
+                color: #464646;
+            }
+
+            footer {
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.3);
+                margin-top: auto;
+                color: #464646;
+                left:0;
+                right: 0;
+                bottom:0;
+                width: 100%;
+                position: relative;
+            }
+
+            @media only screen and (max-width: 768px) {
+
+                /* For mobile phones and tablets: */
+                [class*="col-"] {
+                    width: 100%;
+                }
+            }
+
+            @media only screen and (min-width: 768px) {
+                .col-1 {
+                    width: 8.33%;
+                }
+
+                .col-2 {
+                    width: 16.66%;
+                }
+
+                .col-3 {
+                    width: 25%;
+                }
+
+                .col-4 {
+                    width: 33.33%;
+                }
+
+                .col-5 {
+                    width: 41.66%;
+                }
+
+                .col-6 {
+                    width: 50%;
+                }
+
+                .col-7 {
+                    width: 58.33%;
+                }
+
+                .col-8 {
+                    width: 66.66%;
+                }
+
+                .col-9 {
+                    width: 75%;
+                }
+
+                .col-10 {
+                    width: 83.33%;
+                }
+
+                .col-11 {
+                    width: 91.66%;
+                }
+
+                .col-12 {
+                    width: 100%;
+                }
+            }
+
+            body {
+                font-family: 'Orelega One';
+                font-size: 18px;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                max-width: 100%;
+                max-height: 100%;
+                background: #654ea3;
+                background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);
+                background: linear-gradient(to right, #654ea3, #eaafc8);
+                background-size: cover;
+                background-position: 30%;
+                background-attachment: fixed;
+            }
+
+            .sb-form {
+                width: 920px;
+                float: right;
+                margin: 20px;
+                padding: 30px 0;
+                font-size: 17px;
+                position: relative;
+                text-align: center;
+            }
+
+            .sb-form form {
+                border-radius: 3px;
+                background-color: rgba(255, 255, 255, 0.8);
+                padding-top: 30px;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                border-radius: 20px;
+            }
+
+        .sb-form .wrapper {
+            margin: auto;
+            overflow-x: hidden;
+            margin-top: 0%;
+            margin-bottom: 1%;
+            position: relative;
+            text-align: center;
+            background: #aaa6e2;
+            border-radius: 12px;
+            color: white;
+        }
+
+            .sb-form .form-group {
+                margin-bottom: 20px;
+            }
+
+            .sb-form .row div:first-child {
+                padding-right: 10px;
+            }
+
+            .sb-form .row div:last-child {
+                padding-left: 10px;
+            }
+
+            .text-center {
+                color: #636363;
+            }
+
+              .sb-form .btn{
+                font-size: 22px;
+                  min-width: 140px;
+                  outline: none !important;
+                  background: #a6e2c8;
+                  color: #464646;
+                  border-radius: 12px;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  margin-left: 10px;
+                  margin-right: 10px;
+              }
+        
+              .sb-form .btn:hover {
+                font-size: 22px;
+                  min-width: 140px;
+                  outline: none !important;
+                  background-color: #65c5c0;
+                  color: white;
+                  border-radius: 12px;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  margin-left: 10px;
+                  margin-right: 10px;
+              }
+
+               #myInput {
+                  background-image: url('/css/searchicon.png');
+                  background-position: 10px 12px;
+                  background-repeat: no-repeat;
+                  width: 100%;
+                  font-size: 16px;
+                  padding: 12px 20px 12px 40px;
+                  border: 1px solid #ddd;
+                  margin-bottom: 12px;
+                }
+
+                /* Style the button that is used to open and close the collapsible content */
+                .collapsible {
+                  background-color: white;
+                  color: #444;
+                  cursor: pointer;
+                  padding: 18px;
+                  width: 100%;
+                  border: none;
+                  text-align: left;
+                  outline: none;
+                  font-size: 20px;
+                  opacity: 0.85;
+                }
+
+                /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+                .active, .collapsible:hover {
+                    background-color: #a6e2c8;
+                }
+
+                /* Style the collapsible content. Note: hidden by default */
+                .content {
+                  padding: 0 18px;
+                  background-color: rgba(255, 255, 255, 1);
+                  max-height: 0;
+                  overflow: hidden;
+                  transition: max-height 0.2s ease-out;
+                  font-size: 18px;
+                }
+
+                .firstSpan .secondSpan {
+                  visibility: hidden;
+                  width: 500px;
+                  background-color: #6865AC;
+                  color: white;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 8px;
+                  position: absolute;
+                  z-index: 1;
+                  opacity: 0.85;
+                }
+
+                .firstSpan:hover .secondSpan {
+                  visibility: visible;
+                }
+
+                .content .msg {
+                    margin-top: 15px;
+                    font-size: 18px;
+                }
+
+                .dropdown .arrowdown {
+                  font-size: 15px;
+                }
+
+                .dot {
+                  height: 25px;
+                  width: 25px;
+                  background-color: #bbb;
+                  border-radius: 50%;
+                  display: inline-block;
+                }
+
+                .myFont {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    font-size: 20px;
+                }
+            </style>
+        </head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <div class="row">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'studybuddy:index' %}">Study Buddy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:viewposts' %}">My Posts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:alldepartments' %}"> Update Course Schedule </a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:upcomingSessions' %}"> Study Sessions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:rooms' %}"> Chat Rooms </a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:viewFriends' %}">Friends</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:account' %}"> My Account </a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout"> Logout {{student_name}} </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="sb-form">
+            <form>
+            <div class="wrapper">
+            <h1>My Upcoming Study Sessions</h1></div>
+            {% if no_sessions %}
+            <p class="myFont">
+                    Note: You currently do not have any study sessions. </p>
+                  <p>  To schedule a study session: <br>
+                    Go to 'Chat rooms' in navigation bar-> 'Enter the room to chat!' -> Scroll down and choose 'Schedule study session'
+                </p>
+            {% endif %}
+            </form>
+            <br>
+                <div class="dropdown">
+                    <button type="button" class="collapsible">
+                        <span class="arrowdown">&#8964</span> Scheduled Study Sessions
+<!--                        - {% if study_sessions %} {{ study_sessions.count }} session(s) {% else %} 0 session {% endif %}-->
+                        <span class="firstSpan">
+                            (?)
+                            <span class="secondSpan">
+                                Study session that you have accepted
+                            </span>
+                        </span>
+                    </button>
+                    <div class="content">
+                        {% if study_sessions %}
+                            {% for session in study_sessions %}
+                                <li style="list-style-type: none" class="msg">
+                                    {{ session | linebreaksbr }}
+                                </li>
+                                <form action="" method = "post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="session_pk" value="{{session.pk}}">
+                                    <input onClick="confirmFunction2(this)" name='delete' type="button" value="Delete" class="btn btn-sm btn-danger">
+                                </form>
+                            {% endfor %}
+                        {% else %}
+                            <p class="msg">You currently do have any scheduled study sessions</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <br>
+                <div class="dropdown">
+                    <button type="button" class="collapsible">
+                        <span class="arrowdown">&#8964</span> Incoming Study Session Requests
+                        <span class="firstSpan">
+                            (?)
+                            <span class="secondSpan">
+                                Study session that are pending approval from you (open dropdown to accept or deline)
+                            </span>
+                        </span>
+                    </button>
+                    <div class="content">
+                        {% if pending_sessions %}<br>
+                            {% for session in pending_sessions %}
+                                <li style="list-style-type: none">
+                                    {{ session | linebreaksbr }}
+                                </li>
+                                <form action="" method = "post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="session_pk" value="{{session.pk}}">
+                                    <input name='accept' type="submit" value="Accept" class="btn btn-sm btn-primary"> &nbsp &nbsp
+                                    <input onClick="confirmFunction3(this)" name='decline' type="button" value="Decline" class="btn btn-sm btn-danger">
+                                </form>
+                            {% endfor %}
+                        {% else %}
+                            <p class="msg">You currently do have any study sessions requests from other users</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <br>
+                <div class="dropdown">
+                    <button type="button" class="collapsible">
+                        <span class="arrowdown">&#8964</span> My Study Session Requests
+                        <span class="firstSpan">
+                            (?)
+                            <span class="secondSpan">
+                                Study session that you have made and are awaiting approval from other users
+                                (open dropdown to see them)
+                            </span>
+                        </span>
+                    </button>
+                    <div class="content"><br>
+                        <h3> Sent </h3>
+                        {% if sent_sessions %}
+                            {% for session in sent_sessions %}
+                                <li style="list-style-type: none">
+                                    {{ session | linebreaksbr }}
+                                </li>
+                                <form action="" method = "post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="session_pk" value="{{session.pk}}">
+                                    <input onClick="confirmFunction(this)" id="delete_request" name='delete' type="button" value="Delete" class="btn btn-sm btn-danger">
+                                </form>
+                            {% endfor %}
+                        {% else %}
+                            <p class="msg">You have not sent any study sessions requests to other users</p>
+                        {% endif %}
+                        <br> <br>
+                        <h3> Declined </h3>
+                        {% if declined_sessions %}
+                            {% for session in declined_sessions %}
+                                <li style="list-style-type: none">
+                                    {{ session | linebreaksbr }} <br>
+                                    will be removed on: {{ session.date }} {{ session.end }}
+                                </li><br>
+                            {% endfor %}
+                        {% else %}
+                            <p class="msg">You currently do not have any declined study sessions requests</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-container">
+        <div class="text-center">&copy; Team B-15</div>
+      </footer>
+    </div>
+</div>
+    <script>
+        function confirmFunction(clickedElement) {
+            if(confirm("Are you sure you want to delete this study session request?") == true) {
+                console.log("The user confirmed to delete the study session request");
+                clickedElement.setAttribute('type', 'submit');
+            }
+            else {
+                console.log("The user cancelled to delete the study session request");
+            }
+        }
+
+        function confirmFunction2(clickedElement) {
+            if(confirm("Are you sure you want to delete this study session?") == true) {
+                console.log("The user confirmed to delete the study session");
+                clickedElement.setAttribute('type', 'submit');
+            }
+            else {
+                console.log("The user cancelled to delete the study session");
+            }
+        }
+
+        function confirmFunction3(clickedElement) {
+            if(confirm("Are you sure you want to decline this study session request?") == true) {
+                console.log("The user confirmed to decline the study session request");
+                clickedElement.setAttribute('type', 'submit');
+            }
+            else {
+                console.log("The user cancelled to decline the study session request");
+            }
+        }
+    </script>
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                }
+              });
+            }
+        </script>
+
+</body>
+
+</html>

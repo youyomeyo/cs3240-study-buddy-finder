@@ -1,0 +1,240 @@
+Beta Testing User Script 3
+
+Thank you for joining our beta testing stage. Please complete the following tests in the order they have been provided.
+If you encounter any errors or have comments throughout the process fill out the chart on “Beta Testing Result” that an
+admin member should have provided you so we can continue to improve our website.
+
+To start, go to this link: https://cs-3240-my-study-buddy.herokuapp.com/
+
+Test 1: Google login and on homepage
+  1) Click on the button in the center of the screen labeled "Login With Google". If the button is not seen, please fill
+     out the chart about the missing button.
+  2) Log in to the desired google account. If this did not work please fill out the chart about the error that was run into.
+  3) Assuming there was no previous log in, a screen to edit profile should be seen. If this information is not accurate,
+     please fill out the chart of the missing/inaccurate information.
+  4) Make no edits and click the button labeled "Save Profile". If the button is not seen, please fill out the chart
+     about the missing button.
+  5) The account info page with the logged in email should be seen, if this information is not accurate, please fill out
+     the chart of the missing/inaccurate information.
+  6) Click on the words "Study Buddy" in the upper left hand corner
+  7) The homepage with "Welcome to the Study Buddy App" should be seen, if this information is not accurate, please fill
+     out the chart of the missing/inaccurate information.
+  8) Please fill out the chat about any comments on the login process.
+
+Test 2: User is able to add a course to their own course load
+   1) If not logged in on homepage, follow Test 1
+   2) Click on "Update Course Schedule" in the middle of the screen. If this not seen, please fill out the chart about
+      the missing information
+   3) Click on the search bar with placeholder text of "Search for departments.."
+   4) Type "cs"
+   5) Click on the button labeled "CS". If the button is not seen, please fill out the chart about the missing button.
+   6) A screen with "Choose the class you would like to find a study buddy in" bolded should be seen on the screen. If
+      this information is not accurate, please fill out the chart of the missing/inaccurate information.
+   7) Click on the search bar with placeholder text of "Search for courses in CS.."
+   8) Type "3240"
+   9) Click on the button labeled
+       "CS3240: Advanced Software Development Techniques
+       Instructor: Mark Sherriff
+       (Section: 002)"
+       If the button is not seen, please fill out the chart about the missing button.
+   10) A screen asking "Would you like to enroll in this course?" along with "Yes, enroll in this course." already
+       preselected should be seen. If this information is not accurate, please fill out the chart of the
+       missing/inaccurate information.
+   11) Click on the button labeled "Continue". If the button is not seen, please fill out the chart about the missing
+       button.
+   12) The homepage with "CS 3240 - Section: 002" beneath "Update Course Schedule" should be seen. If this information
+       is not accurate, please fill out the chart of the missing/inaccurate information.
+   13) Please fill out the chart with any comments about the process to add a course to your course schedule.
+
+Test 3: User is able to update course schedule from navigation bar
+   1) If not logged in on homepage, follow Test 1
+   2) Click "Update Course Schedule" in the navigation bar at the top of the screen. If this option is not available,
+      please fill out the chart with the missing option.
+   3) Click on the search bar with "Search for departments.." as a placeholder
+   4) Type "cs"
+   5) Click on the button labeled "CS". If the button is not seen, please fill out the chart about the missing button.
+   6) A screen with "Choose the class you would like to find a study buddy in" bolded should be seen on the screen
+   7) Click on the search bar with placeholder text of "Search for courses in CS.."
+   8) Type "3240"
+   9) Click on the button labeled
+       "CS3240: Advanced Software Development Techniques
+       Instructor: Mark Sherriff
+       (Section: 101)"
+       If the button is not seen, please fill out the chart about the missing button.
+   10) A screen asking "Would you like to enroll in this course?" along with "Yes, enroll in this course." already
+       preselected should be seen. If this information is not accurate, please fill out the chart of the
+       missing/inaccurate information.
+   11) Click on the button labeled "Continue". If the button is not seen, please fill out the chart about the missing
+       button.
+   12) The homepage with "CS 3240 - Section: 101" beneath "Update Course Schedule" should be seen. If this information
+       is not accurate, please fill out the chart of the missing/inaccurate information.
+   13) Please fill out the chart with any comments about the process to add a course from the navigation bar.
+
+Test 4: User is able to make a post with values for all sections of the desired course
+   1) If not logged in on homepage, follow Test 1
+   2) If "CS 3240 - Section: 002" is not seen on homepage, follow Test 2 to add course
+   3) Click on the button labeled "CS 3240  - Section: 002", located beneath "Update Course Schedule" near the center
+      of the screen. If the button is not seen, please fill out the chart about the missing button.
+   4) The screen should show the following:
+       "Find study buddy for:
+       CS3240: Advanced Software Development Techniques
+       Instructor: Mark Sherriff
+       (Section: 002)"
+       If this information is not accurate, please fill out the chart of the missing/inaccurate information.
+   5) Click on the button labeled "Create a post!", located on the bottom right of the words from step 4. If the button
+      is not seen, please fill out the chart about the missing button.
+   6) The screen should show the following:
+       "Make a study buddy post for:
+       CS3240: Advanced Software Development Techniques
+       Instructor: Mark Sherriff
+       (Section: 002)"
+       If this information is not accurate, please fill out the chart of the missing/inaccurate information.
+   7) Click on the text field bar with "Study for midterm 2" as a placeholder
+   8) Type "Quiz 2"
+   9) Select the circle next to "All sections of CS3240"
+   10) Click on the field next to "Start Date"
+   11) Enter "11/29/2022"
+   12) Click on the text field box with "Message me if you would like to study together" as a placeholder
+   13) Type "Study for quiz 2 coming up soon!"
+   14) Click the button labeled "Submit Post". If the button is not seen, please fill out the chart about the missing
+       button.
+   15) The same screen from step 4 should be seen
+   16) If not already seen on the screen, scroll down to see "Studybuddy posts for this course" along with the new post
+       submitted in step 14:
+       "Quiz 2
+       Author: <name from login>
+       Time Frame: 11-29-2022 to 12-06-2022"
+       If this information is not accurate, please fill out the chart of the missing/inaccurate information.
+       **Note: due to a change, “Time Frame: ” should not longer be seen
+   17) Click on "Study Buddy" in the upper left hand corner of the screen.
+   18) If "CS 3240 - Section: 101" is not seen on homepage, follow Test 3 to add course.
+   19) Click on the button labeled "CS 3240 - Section: 101", located beneath "Update Course Schedule" near the center
+       of the screen. If the button is not seen, please fill out the chart about the missing button.
+   20) If not already seen on the screen, scroll down to see "Studybuddy posts for this course"
+   21) Check that the post made from step 14 is seen on the screen:
+       "Quiz 2
+       Author: <name from login>
+       Time Frame: 11-29-2022 to 12-06-2022"
+       If this information is not accurate, please fill out the chart of the missing/inaccurate information.
+   22) Please fill out the chart with any comments about the process to make a post that is displayed to the whole course.
+
+Test 5: User is able to create a post without start date and will be auto filled with today's date
+   1) If not logged in, follow Test 1
+   2) If "CS 3240 - Section: 002" is not seen on homepage, follow Test 2 to add course
+   3) Follow steps 3-6 in Test 4
+   4) Click on the field next to "End Date"
+   5) Enter "12/09/2022"
+   6) Click the button labeled "Submit Post". If the button is not seen, please fill out the chart about the missing
+      button.
+      **Note: due to a change, the user should receive an alert about a missing topic. Please fill in “Script 3” as the
+      topic to proceed. Thank you!
+   7) The same screen from step 4 of Test 4 should be seen
+   8) If not already seen on the screen, scroll down to see "Studybuddy posts for this course"
+   9) Check that the post made from step 6 is seen on the screen:
+       "No topic was provided by the author of this post
+       Author: <name>
+       Time Frame: <today’s date> to 12-09-2022"
+       **Note: due to a change, the topic should say “Script 3” and “Time Frame: ” should not longer be seen
+   10) Please fill out the chart with any comments about the process to make a post with only a start date.
+
+Test 6: User is able to see message when they have no study sessions
+   1) If not logged in, follow Test 1
+   2) Click "Study Sessions" in the navigation bar at the top of the screen. If this option is not available, please
+      fill out the chart with the missing option.
+   3) The following message should appear on the screen:
+       "Note: You currently do not have any study sessions. To create a session you must have either sent a message
+       indicating interest in a user's study buddy post or have a post with people who have indicated interest in
+       studying with you.
+       To check for chat rooms, you may go to the 'Chat Rooms' in the navigation bar at the top of the screen. If you
+       have a room opened, then you may chat with the users and will see a schedule study session option
+       To check for posts you have made, you may go to 'My Posts' in the navigation bar at the top of the screen."
+   4) Please fill out the chart with any comments about the message shown when a user has no study sessions.
+
+Test 7: User is able to see message when they have no chat rooms
+   1) If not logged in, follow Test 1
+   2) Click "Chat Rooms" in the navigation bar at the top of the screen. If this option is not available, please fill
+      out the chart with the missing option.
+   3) The following message should appear on the screen:
+      "You currently do not have any chat rooms.
+      Chat rooms are created if you have indicated interest in another user's post, which can be seen on course feed
+      pages or if other users have indicated interest for posts that you have made, which can be seen at the 'My Posts'
+      option in the navigation bar at the top of the screen".
+      If this information is not accurate, please fill out the chart of the missing/inaccurate information.
+   4) Please fill out the chart with any comments about the message shown when a user has no chat rooms.
+
+Test 8: User is able to see a message if they try to resend a friend request they have already sent a request to
+   1) If not already logged in follow Test 1
+   2) Click on "Friends" in the navigation bar at the top of the screen. If this option is not available, please fill
+      out the chart with the missing option.
+   3) Click on the search bar with "example@email.com" as a placeholder
+   4) Type "project@email.com"
+   5) Click on the button labeled "Send a friend request". If the button is not seen, please fill out the chart about
+      the missing button.
+   6) The following message should be seen:
+      "You have successfully sent a friend request to project@email.com, they will show up on your friend list once
+      they have accepted your request."
+      If this information is not accurate, please fill out the chart of the missing/inaccurate information.
+   7) Click on the dropdown "Sent Friend Requests", "project@email.com" should be seen. If this email is missing, please
+      fill out the chart with the missing information.
+   8) Repeat steps 3-5
+   9) The following message should be seen:
+       "You have already sent a friend request to project@email.com, its pending acceptance from the user".
+       If this information is not accurate, please fill out the chart of the missing/inaccurate information.
+   10) Please fill out the chart with any comments about the process to add friends.
+
+Test 9: User is able to see a message if they try to send a friend to a user not in the system
+   1) If not already logged in follow Test 1
+   2) Click on "Friends" in the navigation bar at the top of the screen. If this option is not available, please fill
+      out the chart with the missing option.
+   3) Click on the search bar with "example@email.com" as a placeholder
+   4) Type "beta@email.com"
+   5) Click on the button labeled "Send a friend request". If the button is not seen, please fill out the chart about
+      the missing button.
+   6) The following message should be seen:
+       "User with email: beta@email.com is not a user of our system. Please try another email or ask them to sign up to
+       Studybuddy with this link."
+       If this information is not accurate, please fill out the chart of the missing/inaccurate information.
+   7) Please fill out the chart with any comments about the message shown when a user has not logged into our system.
+
+Test 10: User is able to change their account profile
+   1) If not already logged in, follow Test 1
+   2) Click on "My Account" in the navigation bar at the top of the page. If this option is not available, please fill
+      out the chart with the missing option.
+   3) On the right side of the screen, click on the button labeled "Edit Profile". If the button is not seen, please
+      fill out the chart about the missing button.
+   4) Click on the text box with "Username" to the left of it
+   5) Type "beta tester"
+   6) Click on the text box with "Major:" to the left of it
+   7) Type "computer science"
+   8) Click on the text box with "Zoom link:" to the left of it
+   9) Type "zoomlink.com"
+   10) Click on the text box with "About Me:" to the left of it
+   11) Type "I am a good student"
+   12) If "Save Profile" is not already seen on the screen, scroll down and click on the button labeled "Save Profile".
+       If the button is not seen, please fill out the chart about the missing button.
+   13) A pop up above the textbox for "Zoom link:" should show up saying: "Enter a URL".  If this information is not
+       accurate, please inform the admin of the missing/inaccurate information.
+   14) Click on the text box with "Zoom link:" to the left of it and remove the current text in it
+   15) Type "https://virginia.zoom.us/"
+   16) If "Save Profile" is not already seen on the screen, scroll down and click on the button labeled "Save Profile".
+       If the button is not seen, please fill out the chart about the missing button.
+   17) "I am a good student" should be seen on the screen in blue text above "Username". Along with "beta tester" as
+       the Username, "computer science" as the major, and "https://virginia.zoom.us/" as the Zoom link.
+       If this information is not accurate, please fill out the chart of the missing/inaccurate information.
+   18) Please fill out the chart with any comments about the process to change information in the account profile.
+
+Test 11: User is able to log and return to the login page
+   1) If not already logged in, follow Test 1
+   2) Click on "Logout <name from login>", if this option is not available, please fill out the chart of the
+      missing/inaccurate option.
+   3) "Login with Google" should be seen on the screen. If the information is not seen, please inform the admin of the
+      missing/inaccurate information.
+
+You have finished the beta testing scripts. Please fill out any other feedback you have about the UX or functionality
+of our website, you may put these comments in the chart and label the column “Test number - script step” with “final”.
+
+Note: You may also test and comment on other functionalities that you noticed/were interested in during the testing
+process. And if you have any other comments in this process please add them to the bottom of the chart and put “extras”
+in the column for “Test number - script step”.
+
+Thank you so much for participating!

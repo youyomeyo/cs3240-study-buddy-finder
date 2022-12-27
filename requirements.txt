@@ -1,0 +1,19 @@
+# Django is needed to run Django
+Django
+
+# gunicorn is needed by Heroku to launch the web application
+gunicorn
+
+# django-heroku is ONLY needed by Heroku for their internal process
+django-heroku
+
+#all-auth for google login
+django-allauth
+
+# run coverage tests
+django_nose
+coverage
+
+# for chat rooms
+channels==4.0.0
+daphne==4.0.0

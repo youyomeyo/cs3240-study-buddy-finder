@@ -1,0 +1,246 @@
+{% load socialaccount %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Team B-15">
+    <meta name="description" content="Study Buddy">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Study Buddy</title>
+    <link href='https://fonts.googleapis.com/css?family=Orelega One' rel='stylesheet'>
+    <style>
+        .navbar {
+            text-align: right;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar-brand {
+            margin-left: 16px;
+            font-size: 26px;
+            color: #464646;
+        }
+
+        .navbar-toggler {
+            color: #464646;
+        }
+
+        .nav-link {
+            text-align: right;
+            color: #464646;
+        }
+
+        footer {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin-top: auto;
+            color: #464646;
+            left:0;
+            right: 0;
+            bottom:0;
+            width: 100%;
+            position: positive relative;
+        }
+
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones and tablets: */
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .col-1 {
+                width: 8.33%;
+            }
+
+            .col-2 {
+                width: 16.66%;
+            }
+
+            .col-3 {
+                width: 25%;
+            }
+
+            .col-4 {
+                width: 33.33%;
+            }
+
+            .col-5 {
+                width: 41.66%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+            .col-7 {
+                width: 58.33%;
+            }
+
+            .col-8 {
+                width: 66.66%;
+            }
+
+            .col-9 {
+                width: 75%;
+            }
+
+            .col-10 {
+                width: 83.33%;
+            }
+
+            .col-11 {
+                width: 91.66%;
+            }
+
+            .col-12 {
+                width: 100%;
+            }
+        }
+
+        body {
+            font-family: 'Orelega One';
+            font-size: 18px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            max-height: 100%;
+            background: #654ea3;
+            background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);
+            background: linear-gradient(to right, #654ea3, #eaafc8);
+            background-size: cover;
+            background-position: 30%;
+            background-attachment: fixed;
+        }
+
+        .wrapper {
+            margin: auto;
+            overflow-x: hidden;
+            margin-bottom: 30px;
+            position: relative;
+            text-align: center;
+            background: #aaa6e2;
+            border-radius: 12px;
+        }
+
+        .title {
+            color: white;
+        }
+
+        .container {
+            font-size: 30px;
+            max-width: 1000px;
+            padding-top: 2%;
+            padding-left: 2%;
+            padding-right: 2%;
+            padding-bottom: 0.1%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            border-radius: 25px;
+            background: #fff;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            flex: 1 1 auto;
+        }
+
+        .container .row {
+            word-wrap: break-word;
+        }
+
+        .container .myForm .btn {
+            font-size: 25px;
+              min-width: 400px;
+              outline: none !important;
+              background: #a6e2c8;
+              color: white;
+              margin-bottom: 2%;
+              border-radius: 10px;
+          }
+
+          .container .myForm .form-group .btn{
+            font-size: 18px;
+              min-width: 250px;
+              outline: none !important;
+              background-color: #65c5c0;
+              color: white;
+              border-radius: 10px;
+          }
+
+        .container .myForm .form-group .courseInfo {
+            text-decoration: none;
+            color: #636363;
+            font-size: 22px;
+        }
+
+        .container .myForm .form-group .text-center {
+            color: #464646;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+{% if user.is_authenticated %}
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <div class="row">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'studybuddy:index' %}"> Study Buddy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:viewposts' %}">My Posts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="alldepartments"> Update Course Schedule </a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:upcomingSessions' %}"> Study Sessions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:rooms' %}"> Chat Rooms </a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:viewFriends' %}">Friends</a></li>
+                        <li class="nav-item"><a class="nav-link" href="account"> My Account </a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout"> Logout {{student_name}} </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="col-md-12">
+        <div class="container">
+            <form class = "myForm">
+                        <div class="wrapper">
+                            <h1 class="title">Welcome to Study Buddy Finder!</h1>
+                          </div>
+                          <a class="btn" href="{% url 'studybuddy:alldepartments' %}">Update Course Schedule</a>
+                          <div class="form-group">
+                              {% if student.enrolledclass_set.all %}
+                              {% for class in student.enrolledclass_set.all %}
+                                <li style="list-style-type: none">
+                                    <a class="btn btn-sm" href="{% url 'studybuddy:coursefeed' class.course.subject class.course.course_number%}">
+                                        {{ class.course.subject }} {{ class.course.catalog_number }} - Section: {{ class.course.section }}
+                                    </a>
+                                </li>
+                              {% endfor %}
+                              {% else %}
+                              <p class="text-center">You are currently not enrolled in any classes</p>
+                              {% endif %}
+                          </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    <footer class="footer-container">
+        <div class="text-center">&copy; Team B-15</div>
+    </footer>
+</div>
+</body>
+
+{% else %}
+  <a href="{% provider_login_url 'google' %}">Login With Google</a>
+{% endif %}
+</html>

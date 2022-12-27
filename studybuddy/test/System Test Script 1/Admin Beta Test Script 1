@@ -1,0 +1,90 @@
+Beta Testing Admin Script 1
+
+Admin please remember to fill out the “beta testing results” form for each user (max 1 page length) of any unexpected
+activities that occur during this process, so we can fix them!
+Also please ask users about any suggestions, thoughts and comments on the UX design and functionalities of the website.
+At the end of the test if the user has any other general comments, you can add them to the chart with “final” in the
+column for “Test number - script step”.
+Also, if the user decides to try/test other functionalities, please add them to the bottom of the chart and put “extras”
+in the column for “Test number - script step”. This is optional based on the user!
+
+Please use the admin account at (https://cs-3240-my-study-buddy.herokuapp.com/admin/) to perform any needed actions:
+Admin username: adminX
+Admin password: projectb15
+
+Before Test 5:
+
+Check 1:
+https://cs-3240-my-study-buddy.herokuapp.com/studybuddy/CS/19660/
+At the above link check for a post titled "Beta Testing"
+With author of "adminX" and time frame of 11-22-2022 to 12-03-2022
+If this post exists, proceed with Test 5. If not follow the steps below then proceed with Test 5
+
+If the above post doesn't exist
+Proceed to this link: https://cs-3240-my-study-buddy.herokuapp.com/studybuddy/CS/19660/makepost?myBtn=
+   In topic enter: "Beta Testing"
+   Keep "post to" as: "Only this section"
+   Start Date of: 11/22/2022
+   End Date of: 12/09/2022
+   Description of: "this post is made for beta testing script 1"
+Click on the "Submit Post" button
+Now make sure Check 1 is fulfilled
+
+
+After Step 8 of Test 5
+1) Make sure you are logged into the admin account
+2) Go to https://cs-3240-my-study-buddy.herokuapp.com/studybuddy/
+3) Click "Chat Rooms" in the navigation bar at the top of the screen
+4) Look for a chat room named: "CS 3240 - Beta Testing"
+5) Click the button labeled "Enter the room to chat!" for the "CS 3240 - Beta Testing" chat room
+6) You should see an empty screen with no messages.
+7) Have user proceed with step 9
+
+After Step 11 of Test 5
+1) Check you can see the either
+   "<user's email> : Hi! Let's study together" or "<user's name> : Hi! Let's study together"
+2) Enter "Yes!" in the message bar with "Your message" as a placeholder. Then click the button labeled "Send"
+3) Have user proceed with step 12
+
+
+After Step 11 of Test 6
+1) Make sure you are logged into the admin account
+2) Go to: https://cs-3240-my-study-buddy.herokuapp.com/studybuddy/upcomingSessions
+3) Open the dropdown labeled "Incoming Study Session Requests" and you should see:
+   "Study session for: Beta Testing
+   Scheduled on: 12-10-2022
+   Time Frame: 13:00 to 14:00"
+   Along with buttons labeled "Accept" and "Decline"
+4) Click on the button labeled "Accept"
+5) Have user proceed with step 12
+
+
+After Step 7 of Test 8
+1) Make sure you are logged into the admin account
+2) Go to: https://cs-3240-my-study-buddy.herokuapp.com/studybuddy/friends
+3) Open the dropdown labeled "Incoming Friend Requests" and you should see the user's logged in email
+4) Click on the button labeled "Accept"
+
+
+Expected errors from the user due to changes that have already been made after the release of beta scripts:
+
+Test 3:
+Step 7: Beta tester should receive an alert saying "The topic may not be left blank". Please have the user close the
+        alert and do the following:
+        1) Click on the field labeled "Topic" with placeholder text of "Study for midterm 2"
+        2) Type "Script 1".
+        3) Click on the button labeled "Submit Post"
+        4) Proceed with step 8
+
+Step 9: Beta tester should look for a post titled "Script 1" instead of "No topic was provided by the user of this post"
+        And "Time Frame: " should no longer exist from the post
+
+
+Test 5:
+Step 5: Beta tester should find the post titled "Beta Testing" and not see "Time Frame" before the dates
+
+Step 6: Beta tester should see a purple background instead of gray
+
+
+Test 6:
+Step 10: Beta tester should look "My Study Session Requests" instead of "Sent Study Session Requests"

@@ -1,0 +1,223 @@
+Beta Testing User Script 2
+
+Thank you for joining our beta testing stage. Please complete the following tests in the order they have been provided.
+This script has actions that need to be performed by an admin, ensure that you have an admin with you to guide you in
+completing this process. If you encounter any errors throughout the process please inform the admin so we can continue
+to improve our website.
+
+To start, go to this link: https://cs-3240-my-study-buddy.herokuapp.com/
+
+Test 1: Google login and on homepage
+   1) Click on the button in the center of the screen labeled "Login With Google". If the button is not seen, please
+      inform the admin of the missing button.
+   2) Try signing in with a Google account (that is a virginia.edu account). If this did not work please inform the
+      admin member.
+   3) Assuming there was no previous log in, a screen to edit profile should be seen.
+   4) Make no edits and click the button labeled "Save Profile". If the button is not seen, please inform the admin of
+      the missing button.
+   5) The account info page with the logged in email should be seen, if this information is not accurate, please inform
+      the admin of the missing/inaccurate information
+   6) Click on the words "Study Buddy" in the upper left hand corner
+   7) The homepage with "Welcome to the Study Buddy App" should be seen, if this information is not accurate, please
+      inform the admin of any missing/inaccurate information
+   8) Please inform the admin member about any comments on the login process.
+
+Test 2: User is able to add a course to their own course load
+   1) If not logged in on homepage, follow Test 1
+   2) Click on "Update Course Schedule" in the middle of the screen. If this is not seen, please inform the admin of the
+      missing information.
+   3) Click on the search bar with placeholder text of "Search for departments.."
+   4) Type "cs"
+   5) Click on the button labeled "CS", if this button is not seen, please inform the admin of the missing button.
+   6) A screen with "Choose the class you would like to find a study buddy in" bolded should be seen on the screen. If
+      this information is not accurate, please inform the admin of the missing/inaccurate information.
+   7) Click on the search bar with placeholder text of "Search for courses in CS.."
+   8) Type "3240"
+   9) Click on the button labeled
+       "CS3240: Advanced Software Development Techniques
+       Instructor: Mark Sherriff
+       (Section: 002)"
+       If this button is not seen, please inform the admin of the missing button.
+   10) A screen asking "Would you like to enroll in this course?" along with "Yes, enroll in this course." already
+       preselected should be seen. If this information is not accurate, please inform the admin of any missing/inaccurate
+       information.
+   11) Click on the button labeled "Continue". If the button is not seen, please inform the admin of the missing button.
+   12) The homepage with "CS 3240 - Section: 002" beneath "Update Course Schedule" should be seen. If this information
+       is not accurate, please inform the admin of any missing/inaccurate information.
+   13) Please inform the admin member about any comments on the process to a course to the course schedule.
+
+Test 3: User is able to make a post with default values for only the section they are enrolled in
+   1) If not logged in on homepage, follow Test 1
+   2) If "CS 3240 - Section: 002" is not seen on homepage, follow Test 2 to add course
+   3) Click on the button labeled "CS 3240 - Section: 002", located beneath "Update Course Schedule" near the center
+      of the screen. If the button is not seen, please inform the admin of the missing button.
+   4) The screen should show the following:
+       "Find study buddy for:
+       CS3240: Advanced Software Development Techniques
+       Instructor: Mark Sherriff
+       (Section: 002)"
+       If this information is not accurate, please inform the admin of any missing/inaccurate information
+   5) Click on the button labeled "Create a post!", located on the bottom right of the words from step 4. If this button
+      is not seen, please inform the admin of the missing button.
+   6) The screen should show the following:
+       "Make a study buddy post for:
+       CS3240: Advanced Software Development Techniques
+       Instructor: Mark Sherriff
+       (Section: 002)"
+       If this information is not accurate, please inform the admin of any missing/inaccurate information
+   7) Do not edit anything on the screen and click the button labeled "Submit Post". If the button is not seen, please
+      inform the admin of the missing button.
+      **Admin take a look at lines 58-63 in admin script for changes that have been made
+   8) The same screen from step 4 should be seen. If this information is not accurate, please inform the admin of any
+      missing/inaccurate information.
+   9) If not already seen on the screen, scroll down to see "Studybuddy posts for this course" and find the new post
+      made in step 7
+       "No topic was provided by the author of this post
+       Author: <name of user from login>
+       Time Frame: <today’s date> to <a week from today>"
+      If this information is not accurate, please inform the admin of any missing/inaccurate information.
+      **Admin take a look at lines 65-66 in admin script for some inaccurate information to expect
+  10) Please inform the admin member about any comments on the process to make a post.
+
+Test 4: User is able to unenroll from a course, but their posts remain
+   1) If not logged in on homepage, follow Test 1
+   2) If "CS 3240 - Section: 002" is not seen on homepage, follow Test 2 to add course
+   3) If a post has not been made, follow Test 3
+   4) Follow steps 3 and 4 from Test 3
+   5) Click on the button labeled "Remove course from schedule", located near the center of the screen. If this button
+      is not seen, please inform the admin of the missing button.
+   6) The following message should be seen: "You are already enrolled in this course. Would you like to remove this
+      course from your schedule?". Along with "Yes, remove this course from my schedule." preselected. If this
+      information is not accurate, please inform the admin of any missing/inaccurate information.
+   7) Click on the button labeled "Continue". If the button is not seen, please inform the admin of the missing button.
+   8) The home page screen with "Welcome to the Study Buddy App!" should be seen. And "CS 3240 - Section: 002" should no
+      longer be listed beneath "Update Course Schedule". If this information is not accurate, please inform the admin of
+      any missing/inaccurate information.
+   9) Click on "My Posts" in the navigation bar at the top of the screen. If this option is not available, please inform
+      the admin of the missing option
+   10) Click on the dropdown labeled "Courses you aren't enrolled in, but made posts for"
+   11) The post from step 9 of Test 3 should be seen along with 3 buttons labeled "View Course Feed", "Description", and
+       "Delete Post". If this information is not accurate, please inform the admin of the inaccurate information.
+   12) Click on the button labeled "View Course Feed". If this button is not seen, please inform the admin of the
+       missing button.
+   13) The screen from step 4 of Test 3 should be seen along with a button labeled "Add course to schedule". If this
+       information is not accurate, please inform the admin of the inaccurate information.
+   14) Please inform the admin member about any comments on the process to unenroll from a course.
+
+Test 5: User is able to message another user to study together
+   **Note: admin should check admin script (Lines 17-31) for actions to perform before testing with the user
+   1) If not logged in on homepage, follow Test 1
+   2) If "CS 3240 - Section: 002" is not seen on the homepage, follow Test 2 to add course
+   3) Look for the following on the screen:
+       "Find study buddy for:
+       CS3240: Advanced Software Development Techniques
+       Instructor: Mark Sherriff
+       (Section: 002)"
+       If not seen, follow steps 3 and 4 in Test 3
+   5) If not already seen on the screen, reload and scroll down to see "Studybuddy posts for this course"
+      along with the following post:
+      "Beta Testing
+      Author: adminX
+      Time Frame: 11-22-2022 to 12-09-2022"
+      If this information is not accurate, please inform the admin of any missing/inaccurate information.
+      **Admin take a look at line 70 in admin script for some inaccurate information to expect
+   6) Hover over the button labeled "View Description" and "this post is made for beta testing script 1" should be seen
+      as a pop up with a gray background. If this information is not accurate, please inform the admin of the
+      missing/inaccurate information.
+      **Admin take a look at line 72 in admin script for some inaccurate information to expect
+   7) Click on the button labeled "Message Me!". If the button is not seen, please inform the admin of the missing button.
+   8) The screen should show the following: "CS3240 - Beta Testing"
+      Along with the users in this meeting room: adminX and the name from login, if there isn't a name, the logged in
+      email should be seen.
+   ** Note: Admin should check admin script (Lines 34-41) for actions before proceeding
+   9) Click on the message bar with "Your message" as a placeholder.
+   10) Type "Hi! Let's study together!".
+   11) Click the button labeled "Send". If the button is not seen, please inform the admin of the missing button.
+   ** Note: Admin should check admin script (Lines 43-47) for actions before proceeding
+   12) The following message should be seen on the screen: "adminX : Yes!"
+   13) Please inform the admin member about any comments on the process to schedule a session and chatting with other users.
+
+Test 6: User should be able to schedule a study session and see alerts when fields are not filled in properly
+   1) If the following is not seen in chat rooms: "CS3240 - Beta Testing", follow Test 5
+   2) If not already seen on the screen, scroll down to see and click on a button labeled "Schedule Study Session". If
+      the button is not seen, please inform the admin of the missing button.
+   3) The screen should show the following:
+      "Schedule a study session for:
+      CS3240 - Beta Testing"
+      If this information is not accurate, please inform the admin of the missing/inaccurate information.
+   4) Enter "11/01/2022" in the date box to the right of "Date"
+   5) Click on the button labeled "Schedule". If the button is not seen, please inform the admin of the missing button.
+   6) An alert saying should be seen:
+      "All fields must be filled in, the following fields are not filled:
+       Start Time
+       End Time "
+      If this information is not accurate, please inform the admin of the missing/inaccurate information.
+   7) Click "Close" or "Ok" or any related button to close the alert (This is different depending on browser)
+   8) Enter "01:30 PM" in the time box to the right of "Start Time:"
+   9) Click on the button labeled "Schedule". If the button is not seen, please inform the admin of the missing button.
+   10) An alert saying should be seen:
+      "All fields must be filled in, the following fields are not filled:
+       End Time "
+       If this information is not accurate, please inform the admin of the missing/inaccurate information.
+   11) Click "Close" or "Ok" or any related button to close the alert (This is different depending on browser)
+   12) Enter "01:00 PM" in the time box to the right of "End Time:"
+   13) Click on the button labeled "Schedule". If the button is not seen, please inform the admin of the missing button.
+   14) An alert saying should be seen: "The date of the study session can not happen in the past". If this information
+       is not accurate, please inform the admin of the missing/inaccurate information.
+   15) Click "Close" or "Ok" or any related button to close the alert (This is different depending on browser)
+   16) Change the date box to the right of "Date" to have "12/10/2022" instead of "11/01/2022"
+   17) Click on the button labeled "Schedule". If the button is not seen, please inform the admin of the missing button.
+   18) An alert saying should be seen: "The end time of the study session must be later than start time of the study
+       session"
+   19) Click "Close" or "Ok" or any related button to close the alert (This is different depending on browser)
+   20) Change the time box to the right of "End Time:" to have "02:00 PM" instead of "01:00 PM"
+   21) Click on the button labeled "Schedule". If the button is not seen, please inform the admin of the missing button.
+   22) The screen should show the following: "My Upcoming Study Sessions". If this information is not accurate, please
+       inform the admin of the missing/inaccurate information.
+   10) **Admin check line 76 in admin script for a modification to this instruction
+       Click on the dropdown labeled "Sent Study Session Requests"
+   11) The following should be seen:
+       "Study session for: Beta Testing
+       Scheduled on: 12-10-2022
+       Time Frame: 13:30 to 14:00"
+       Along with a button labeled "Delete". If this information is not accurate, please inform the admin of the
+       missing/inaccurate information.
+   12) Please inform the admin member about any comments on the alerts/process when scheduling a study session.
+
+Test 7: When user sends an empty message an alert is shown and the message is not sent and user is able to leave chat room
+   1) If the following is not seen in chat rooms: "CS3240 - Beta Testing", follow Test 5
+   2) Click on "Chat Rooms" in the navigation bar at the top of the screen. If this option is not available, please inform
+      the admin of the missing option.
+   3) The screen should show the following: "CS3240 - Beta Testing" along with a button labeled "Enter the room to chat!".
+      If this information is not accurate, please inform the admin of the missing/inaccurate information.
+   4) Click on the button labeled "Enter the room to chat!". If the button is not seen, please inform the admin of the
+      missing button.
+   5) The screen should show the following: "CS3240 - Beta Testing"
+      Along with the user in this meeting room: adminX and the name from login, if there isn't a name, the logged in
+      email should be seen. If this information is not accurate, please inform the admin of the missing/inaccurate
+      information.
+   6) Do not type anything in the message bar and click on the button labeled "Send". If the button is not seen, please
+      inform the admin of the missing button.
+   7) An alert saying: "The message was empty!" should show up. If this information is not accurate, please inform the
+      admin of the missing/inaccurate information.
+   ** Note: Admin should check admin script (Lines 50-52) for checks, user may continue to proceed
+   8) Click "Close" or "Ok" or any related button to close the alert (This is different depending on browser)
+   9) **Admin check line 80 in admin script for a modification to this instruction
+      If not already seen, scroll up to find and click on the button labeled "Permanently leave this room". If the
+      button is still not seen, please inform the admin of the missing button.
+   10) The following message should be seen:
+       "You currently do not have any chat rooms. Chat rooms are created if you have indicated interest in another
+       user's post, which can be seen on course feed pages or if other users have indicated interest for posts that you
+       have made, which can be seen at the 'My Posts' option in the navigation bar at the top of the screen"
+   10) Please inform the admin member about any comments on the process to leave the chat room.
+
+Test 8: User is able to log out and return to the login page
+   1) If not already logged in, follow Test 1
+   2) Click on "Logout <name of the logged in account>". If this option is not available, please inform the admin of the
+      missing option.
+   3) "Login with Google" should be seen on the screen. If this information is not accurate, please inform the admin of
+      the missing/inaccurate information.
+
+You have finished the beta testing scripts. Please inform admin about any other feedback you have about the UX or
+functionality of our website. Thank you so much for participating!
+You may also test and comment on other functionalities that you noticed/were interested in during the testing process.

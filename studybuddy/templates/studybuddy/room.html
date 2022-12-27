@@ -1,0 +1,417 @@
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Team B-15">
+    <meta name="description" content="Study Buddy">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title> {{ room.name }} </title>
+    <link href='https://fonts.googleapis.com/css?family=Orelega One' rel='stylesheet'>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <style>
+        .navbar {
+            text-align: right;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #464646;
+        }
+
+        .navbar-brand {
+            margin-left: 16px;
+            font-size: 26px;
+            color: #464646;
+        }
+
+        .navbar-toggler {
+            color: #464646;
+        }
+
+        .nav-link {
+            text-align: right;
+            color: #464646;
+        }
+
+        footer {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin-top: auto;
+            color: #464646;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            position: flexible;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            /* For mobile phones and tablets: */
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .col-1 {
+                width: 8.33%;
+            }
+
+            .col-2 {
+                width: 16.66%;
+            }
+
+            .col-3 {
+                width: 25%;
+            }
+
+            .col-4 {
+                width: 33.33%;
+            }
+
+            .col-5 {
+                width: 41.66%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+            .col-7 {
+                width: 58.33%;
+            }
+
+            .col-8 {
+                width: 66.66%;
+            }
+
+            .col-9 {
+                width: 75%;
+            }
+
+            .col-10 {
+                width: 83.33%;
+            }
+
+            .col-11 {
+                width: 91.66%;
+            }
+
+            .col-12 {
+                width: 100%;
+            }
+        }
+
+        body {
+            font-family: 'Orelega One';
+            font-size: 18px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            max-height: 100%;
+            background: #654ea3;
+            background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);
+            background: linear-gradient(to right, #654ea3, #eaafc8);
+            background-size: cover;
+            background-position: 30%;
+            background-attachment: fixed;
+        }
+
+        .wrapper {
+            margin: auto;
+            overflow-x: hidden;
+            margin-bottom: 30px;
+            position: relative;
+            text-align: center;
+            background: #aaa6e2;
+            border-radius: 12px;
+        }
+          
+        .title {
+            color: white;
+        }
+
+        .sb-form {
+            margin: 10px;
+            font-size: 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        .sb-form form {
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0);
+            padding-bottom: 12px;
+        }
+
+        .sb-form .btn{
+            font-size: 18px;
+              min-width: 160px;
+              outline: none !important;
+              background-color: #65c5c0;
+              color: white;
+              border-radius: 10px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              margin-left: 10px;
+              margin-right: 10px;
+          }
+
+          .sb-form .myText {
+            text-align: right;
+          }
+
+          .sb-form .otherText {
+            text-align: left;
+          }
+
+          .sb-form .leaveForm .btn {
+            background: #aaa6e2;
+            margin-bottom: -10px;
+        }
+
+        .sb-form .row div:first-child {
+            padding-right: 10px;
+        }
+
+        .sb-form .row div:last-child {
+            padding-left: 10px;
+        }
+
+        .text-center {
+            color: #636363;
+        }
+
+        .sb-form .textBox {
+            width: 550px;
+        }
+
+        .container {
+            max-width: 1000px;
+            padding: 2%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            border-radius: 20px;
+            background: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .container .sb-form .hline {
+           color: black;
+           margin-top: 3%;
+           margin-bottom: 3%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <div class="row">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'studybuddy:index' %}"> Study Buddy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:viewposts' %}">My Posts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:alldepartments' %}"> Update Course Schedule </a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:upcomingSessions' %}"> Study Sessions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:rooms' %}"> Chat Rooms </a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:viewFriends' %}">Friends</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:account' %}"> My Account </a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout"> Logout {{student_name}} </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="col-md-12">
+            <div class="container">
+            <div class="sb-form">
+                {% if noRoom %}
+                <h1>The room you are trying to look for does not exist</h1>
+                {% elif notMember %}
+                <h1>
+                    You are not a user of this room, because you did not indicated interest in the post associated
+                    to this room
+                </h1>
+                {% else %}
+                <form method="get">
+                    <div class="wrapper">
+                        <h1 class="title"> {{ room }} </h1>
+                    </div>
+                    <div>
+                        <h3>Users in this chat room</h3>
+                        {% for user in room.users.all %}
+                            {% if user.name == "" %}
+                                <h4>{{ user }}</h4>
+                            {% else %}
+                                <h4>{{ user.name }}</h4>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <hr class="hline"></hr>
+                    <div>
+                        <div class="chat-messages space-y-3" id="chat-messages">
+                            {% for message in messages %}
+                            <div class="p-2 bg-gray-200 rounded-xl">
+                                {% if message.user.email == user.email%}
+                                {% if message.user.name == "" %}
+                                    <p class="myText"> {{ message.user.email }} : {{ message.content }} </p>
+                                {% else %}
+                                    <p class="myText"> {{ message.user.name }} : {{ message.content }} </p>
+                                {% endif %}
+                            {% else %}   
+                                {% if message.user.name == "" %}
+                                <p class="otherText"> {{ message.user.email }} : {{ message.content }} </p>
+                            {% else %}
+                                <p class="otherText"> {{ message.user.name }} : {{ message.content }} </p>
+                            {% endif %}
+                            {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </form>
+
+                <!-- user box to write and submit message -->
+                <div>
+                    <form id="chat-message-form" method="post" action="." class="flex">
+                        {% csrf_token %}
+                        <input type="text" name="content" class="textBox" placeholder="Your message.." id="chat-message-input">
+                        <button class="btn btn-sm" id="chat-message-submit">Send</button>
+                    </form>
+                    <form method="post" action="{% url 'studybuddy:schedule' room.pk %}">
+                        {% csrf_token %}
+                        <a class="btn btn-sm" href="{% url 'studybuddy:rooms' %}"> &#8592 Back to all chat rooms</a>
+                        <button class="btn btn-sm" id="schedule">Schedule study session</button>
+                    </form>
+                </div>
+                <div>
+                    <form class="leaveForm" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="room_pk" value="{{room.pk}}">
+                        <input onClick="confirmFunction()" id="leave" class="btn btn-sm" name='leave' type="button" value="Permanently leave this room">
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <footer class="footer-container">
+        <div class="text-center">&copy; Team B-15</div>
+    </footer>
+
+    <script>
+    function confirmFunction() {
+        const leave_button = document.getElementById("leave");
+        if(confirm("Are you sure you want to permenantly leave this chat room? \n You will be able to rejoin by indicating interest in this post again") == true) {
+            console.log("The user confirmed to permanently leave the chat room");
+            leave_button.setAttribute('type', 'submit');
+        }
+        else {
+            console.log("The user cancelled to permanently leave the chat room");
+        }
+    }
+</script>
+
+</body>
+
+{% block scripts %}
+
+{{ room.pk|json_script:"json-room_pk" }}
+{{ request.user.email | json_script:"json-email" }}
+{{ username | json_script:"json-username" }}
+
+<script>
+    const room_pk = JSON.parse(document.getElementById('json-room_pk').textContent)
+    const userEmail = JSON.parse(document.getElementById('json-email').textContent)
+    const userName = JSON.parse(document.getElementById('json-username').textContent)
+
+    const endpoint = ((window.location.protocol === "https:") ? "wss://" : "ws://")
+                    + window.location.host
+                    + '/studybuddy/chat/rooms/'
+                    + room_pk
+                    + '/'
+
+    console.log(endpoint);
+
+    const chatSocket = new WebSocket(endpoint);
+
+    chatSocket.onopen = () => {
+        console.log("Successfully Connected");
+    }
+
+    chatSocket.onmessage = function(e) {
+        console.log('onmessage')
+
+        const data = JSON.parse(e.data);
+
+        console.log("here: " + e.data)
+
+        if (data.message) {
+            let html = '<div class="p-2 bg-gray-200 rounded-xl">';
+            html+= '<p class="myText">' + data.name + " : " + data.message + '</p></div>';
+            if(data.email == userEmail) {
+                console.log("sending user: " + data.email + " userEmail : " + userEmail);
+                if(data.name == "") {
+                    html = '<div class="p-2 bg-gray-200 rounded-xl">';
+                    html+= '<p class="myText">' + data.email + " : " + data.message + '</p></div>';
+                }
+            }
+            else {
+                console.log("receiving user: " + data.email + " userEmail : " + userEmail);
+                if(data.name == "") {
+                    html = '<div class="p-2 bg-gray-200 rounded-xl">';
+                    html+= '<p class="otherText">' + data.email + " : " + data.message + '</p></div>';
+                }
+                else {
+                    html = '<div class="p-2 bg-gray-200 rounded-xl">';
+                    html+= '<p class="otherText">' + data.name + " : " + data.message + '</p></div>';
+                }
+            }
+
+            document.querySelector('#chat-messages').innerHTML += html;
+        }
+        else {
+            if(data.email == userEmail) {
+                alert('The message was empty!');
+            }
+        }
+    }
+
+    chatSocket.onclose = function(e) {
+        console.log('error', e)
+        console.log('The socket has closed due to the error listed above')
+    }
+
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        e.preventDefault();
+        const messageInputDom = document.querySelector('#chat-message-input');
+        const message = messageInputDom.value;
+
+        chatSocket.send(JSON.stringify({
+            'message': message,
+            'email': userEmail,
+            'room_pk': room_pk
+        }));
+
+        messageInputDom.value = '';
+        return false;
+    }
+</script>
+
+{% endblock %}
+
+</html>

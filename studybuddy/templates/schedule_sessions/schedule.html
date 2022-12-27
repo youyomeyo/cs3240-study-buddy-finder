@@ -1,0 +1,386 @@
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Team B-15">
+        <meta name="description" content="Study Buddy">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <title>Schedule a Study Session</title>
+        <link href='https://fonts.googleapis.com/css?family=Orelega One' rel='stylesheet'>
+        <style>
+            .navbar {
+                text-align: right;
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+    
+            .navbar-brand {
+                margin-left: 16px;
+                font-size: 26px;
+                color: #464646;
+            }
+    
+            .navbar-toggler {
+                color: #464646;
+            }
+    
+            .nav-link {
+                text-align: right;
+                color: #464646;
+            }
+
+            footer {
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.3);
+                margin-top: auto;
+                color: #464646;
+                left:0;
+                right: 0;
+                bottom:0;
+                position: positive relative;
+            }
+
+            @media only screen and (max-width: 768px) {
+
+                /* For mobile phones and tablets: */
+                [class*="col-"] {
+                    width: 100%;
+                }
+            }
+
+            @media only screen and (min-width: 768px) {
+                .col-1 {
+                    width: 8.33%;
+                }
+
+                .col-2 {
+                    width: 16.66%;
+                }
+
+                .col-3 {
+                    width: 25%;
+                }
+
+                .col-4 {
+                    width: 33.33%;
+                }
+
+                .col-5 {
+                    width: 41.66%;
+                }
+
+                .col-6 {
+                    width: 50%;
+                }
+
+                .col-7 {
+                    width: 58.33%;
+                }
+
+                .col-8 {
+                    width: 66.66%;
+                }
+
+                .col-9 {
+                    width: 75%;
+                }
+
+                .col-10 {
+                    width: 83.33%;
+                }
+
+                .col-11 {
+                    width: 91.66%;
+                }
+
+                .col-12 {
+                    width: 100%;
+                }
+            }
+
+            body {
+                font-family: 'Orelega One';
+                font-size: 18px;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                max-width: 100%;
+                max-height: 100%;
+                background: #654ea3;
+                background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);
+                background: linear-gradient(to right, #654ea3, #eaafc8);
+                background-size: cover;
+                background-position: 30%;
+                background-attachment: fixed;
+            }
+
+            .sb-form {
+                width: 700px;
+                float: right;
+                margin-top: 80px;
+                padding: 30px 0;
+                font-size: 22px;
+                position: relative;
+                text-align: center;
+            }
+
+            .sb-form form {
+                border-radius: 3px;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding-top: 30px;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-bottom: 12px;
+                border-radius: 25px;
+            }
+
+            .sb-form .wrapper {
+                margin: auto;
+                overflow-x: hidden;
+                margin-top: 0%;
+                margin-bottom: 1%;
+                position: relative;
+                text-align: center;
+                background: #aaa6e2;
+                border-radius: 12px;
+                color: white;
+            }
+
+            .sb-form .form-group {
+                margin-bottom: 20px;
+            }
+
+            .sb-form .row div:first-child {
+                padding-right: 10px;
+            }
+
+            .sb-form .row div:last-child {
+                padding-left: 10px;
+            }
+
+            .text-center {
+                color: #636363;
+            }
+
+            .sb-form .btn{
+                font-size: 22px;
+                  min-width: 140px;
+                  outline: none !important;
+                  background: #a6e2c8;
+                  color: #464646;
+                  border-radius: 12px;
+                  margin-bottom: 15px;
+              }
+
+              .sb-form .btn:hover {
+                font-size: 22px;
+                  min-width: 140px;
+                  outline: none !important;
+                  background-color: #65c5c0;
+                  color: white;
+                  border-radius: 12px;
+                  margin-bottom: 15px;
+              }
+
+               #myInput {
+                  background-image: url('/css/searchicon.png');
+                  background-position: 10px 12px;
+                  background-repeat: no-repeat;
+                  width: 100%;
+                  font-size: 16px;
+                  padding: 12px 20px 12px 40px;
+                  border: 1px solid #ddd;
+                  margin-bottom: 12px;
+                }
+
+                #myUL {
+                  list-style-type: none;
+                  padding: 0;
+                  margin: 0;
+                }
+
+                #myUL li a {
+                  border: 1px solid #ddd;
+                  margin-top: -1px; /* Prevent double borders */
+                  background: #a6e2c8;
+                  padding: 12px;
+                  text-decoration: none;
+                  font-size: 16px;
+                  color: white;
+                  display: block;
+                  border-radius: 12px;
+                  min-width: 140px;
+                  outline: none !important;
+                }
+
+                #myUL li a:hover:not(.header) {
+                  background-color: #65c5c0;
+                }
+            </style>
+        </head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <div class="row">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'studybuddy:index' %}">Study Buddy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:viewposts' %}">My Posts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:alldepartments' %}"> Update Course Schedule </a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:upcomingSessions' %}"> Study Sessions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:rooms' %}"> Chat Rooms </a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:viewFriends' %}">Friends</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'studybuddy:account' %}"> My Account </a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout"> Logout {{student_name}} </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="d-flex justify-content-center">
+        {% if noRoom %}
+            <div class="sb-form">
+                <h1>The room you are trying to look for does not exist</h1>
+            </div>
+        {% else %}
+            <div class="sb-form">
+                <form id="schedule-form">
+                <div class="wrapper">
+                <h1>Schedule a study session for: <br> {{ room }}</h1></div><br>
+                    {% csrf_token %}
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" value={{date}}><br><br>
+                        <label for="start"> Start Time: </label>
+                        <input type="time" id="start" name="start" value={{start}}> &nbsp &nbsp
+                        <label for="end"> End Time: </label>
+                        <input type="time" id="end" name="end" value={{end}}><br><br>
+
+                        <input type="hidden" name="room_pk" value="{{ room.pk }}">
+
+                        <input class="btn btn-md" onClick='alertWhenFormNotFilled()' name="schedule" id="schedule" type="button" value="Schedule">
+                </form>
+            </div>
+        {% endif %}
+    </div>
+    <footer class="footer-container">
+            <div class="row"></div>
+        <div class="text-center">&copy; Team B-15</div>
+      </footer>
+
+<script>
+    function alertWhenFormNotFilled() {
+        const start = document.getElementById('start').value;
+        let end = document.getElementById('end').value;
+        let date = document.getElementById('date').value;
+        const form = document.getElementById('schedule-form');
+        const schedule = document.getElementById('schedule');
+        let today = new Date()
+
+        let noDate = false;
+        let noStart = false;
+        let noEnd = false;
+
+        let alertMessage = "All fields must be filled in, the following fields are not filled: \n"
+
+        console.log("Date the user entered: " + date);
+
+        if(date == "") {
+            form.setAttribute('action', "");
+            noDate = true;
+            alertMessage += "Date \n ";
+        }
+
+        if(start == "") {
+            form.setAttribute('action', "");
+            noStart = true;
+            alertMessage += "Start Time \n ";
+        }
+
+        if(end == "") {
+            form.setAttribute('action', "");
+            noEnd = true;
+            alertMessage += "End Time \n ";
+        }
+
+        date = new Date(date);
+
+        // date gets sets to the day before and prevent time from being compared. Can start on today
+        date.setDate(date.getDate() + 1)
+
+        console.log("Date entered by user in readable date: " + date)
+        console.log("Date entered by user: " + date.getTime())
+        console.log("Today's readable date: " + today)
+        console.log("Today's date in time: " + today.getTime())
+
+        console.log("End time: " + end)
+
+        console.log(new Date(date) <= today)
+
+        const hour_now = today.getHours();
+        const minute_now = today.getMinutes();
+
+        date.setHours(hour_now, minute_now, 0, 0)
+        today.setHours(hour_now, minute_now, 0, 0)
+
+
+        if(noDate || noStart || noEnd) {
+            console.log("The user is missing attributes to schedule a study session, user is receiving the following " +
+                         "alert message: " + alertMessage);
+            alert(alertMessage);
+        }
+        else if(date.getTime() < today.getTime()) {
+            today.setHours(0, 0, 0, 0)
+            alert("The date of the study session can not happen in the past")
+        }
+        else if(start > end) {
+            console.log("starts after end")
+            alert('The end time of the study session must be later than start time of the study session');
+        }
+        else if(date.getTime() == today.getTime()) {
+            console.log('Same day checking for time');
+            console.log('end hour: ' + end.substring(0, 2))
+            console.log('end minute: ' + end.substring(3, 5))
+            if(hour_now > end.substring(0, 2)) {
+                alert('The end time of the study session must be later than the current time');
+            }
+            else if(hour_now == end.substring(0, 2)) {
+                if(minute_now >= end.substring(3, 5)) {
+                    alert('The end time of the study session must be later than the current time');
+                }
+                else {
+                    console.log('all requirements met!')
+                    form.setAttribute('action', "{% url 'studybuddy:upcomingSessions' %}")
+                    form.setAttribute('method', 'post');
+                    schedule.setAttribute('type', 'submit');
+                }
+            }
+            else {
+                console.log('all requirements met!')
+                form.setAttribute('action', "{% url 'studybuddy:upcomingSessions' %}")
+                form.setAttribute('method', 'post');
+                schedule.setAttribute('type', 'submit');
+            }
+        }
+        else {
+            console.log('all requirements met!')
+            form.setAttribute('action', "{% url 'studybuddy:upcomingSessions' %}")
+            form.setAttribute('method', 'post');
+            schedule.setAttribute('type', 'submit');
+        }
+    }
+
+</script>
+
+</body>
+
+</html>
