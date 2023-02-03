@@ -101,23 +101,23 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dc8v87r7deel1g',
-        'USER': 'lcxaacgcqqgpck',
-        'PASSWORD': '2cef5272476a24d27a2cd98150b63a2a245abe50baf7c23d0a6cdf726bb4c03a',
-        'HOST': 'ec2-3-229-165-146.compute-1.amazonaws.com',
-        'PORT':  5432
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'dc8v87r7deel1g',
+#         'USER': 'lcxaacgcqqgpck',
+#         'PASSWORD': '2cef5272476a24d27a2cd98150b63a2a245abe50baf7c23d0a6cdf726bb4c03a',
+#         'HOST': 'ec2-3-229-165-146.compute-1.amazonaws.com',
+#         'PORT':  5432
+#     }
+# }
 
 if 'test' in sys.argv or 'test_coverage' in sys.argv: #Covers regular testing and django-coverage
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
