@@ -106,20 +106,20 @@ class alldepartments(generic.ListView):
     # template_name = get_template_name()
 
     # Get the json for all the departments
-    deptList = requests.get('http://luthers-list.herokuapp.com/api/deptlist/')
-    deptList_json = json.loads(deptList.text)
+    # deptList = requests.get('http://luthers-list.herokuapp.com/api/deptlist/')
+    # deptList_json = json.loads(deptList.text)
 
-    # makes sure there are no departments from previous calls
-    if Departments.objects.exists():
-        Departments.objects.all().delete()
+    # # makes sure there are no departments from previous calls
+    # if Departments.objects.exists():
+    #     Departments.objects.all().delete()
 
-    # Get all of the current departments available
-    for i in range(len(deptList_json)):
-        newDept = Departments(dept=deptList_json[i].get("subject"))
-        newDept.save()
+    # # Get all of the current departments available
+    # for i in range(len(deptList_json)):
+    #     newDept = Departments(dept=deptList_json[i].get("subject"))
+    #     newDept.save()
 
-    def get_queryset(self):
-        return Departments.objects.all()
+    # def get_queryset(self):
+    #     return Departments.objects.all()
 
     # Source: https://stackoverflow.com/questions/9899113/get-request-session-from-a-class-based-generic-view
     def get_context_data(self, *args, **kwargs):
@@ -146,29 +146,29 @@ def department(request, dept):
     template_name = 'department.html'
 
     # Get the json file for the request department
-    dept = dept.upper()
-    dept_request = "http://luthers-list.herokuapp.com/api/dept/" + dept
-    dept_classes = requests.get(dept_request)
-    dept_classes_json = json.loads(dept_classes.text)
+    # dept = dept.upper()
+    # dept_request = "http://luthers-list.herokuapp.com/api/dept/" + dept
+    # dept_classes = requests.get(dept_request)
+    # dept_classes_json = json.loads(dept_classes.text)
 
-    # Get all of the classes in the requested department
-    for i in range(len(dept_classes_json)):
-        current_class = dept_classes_json[i]
+    # # Get all of the classes in the requested department
+    # for i in range(len(dept_classes_json)):
+    #     current_class = dept_classes_json[i]
 
         # if the course doesn't exists then we will add it
-        if not Course.objects.filter(subject=dept,
-                                     catalog_number=current_class.get('catalog_number'),
-                                     instructor=current_class.get('instructor').get('name'),
-                                     section=current_class.get('course_section'),
-                                     course_number=current_class.get('course_number'),
-                                     description=current_class.get('description')).exists():
-            newClass = Course(subject=dept,
-                              catalog_number=current_class.get('catalog_number'),
-                              instructor=current_class.get('instructor').get('name'),
-                              section=current_class.get('course_section'),
-                              course_number=current_class.get('course_number'),
-                              description=current_class.get('description'))
-            newClass.save()
+        # if not Course.objects.filter(subject=dept,
+        #                              catalog_number=current_class.get('catalog_number'),
+        #                              instructor=current_class.get('instructor').get('name'),
+        #                              section=current_class.get('course_section'),
+        #                              course_number=current_class.get('course_number'),
+        #                              description=current_class.get('description')).exists():
+        #     newClass = Course(subject=dept,
+        #                       catalog_number=current_class.get('catalog_number'),
+        #                       instructor=current_class.get('instructor').get('name'),
+        #                       section=current_class.get('course_section'),
+        #                       course_number=current_class.get('course_number'),
+        #                       description=current_class.get('description'))
+        #     newClass.save()
 
     context = {
         'student_name': User.objects.get(email=request.user.email).name,
